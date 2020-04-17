@@ -50,5 +50,4 @@ test:
 production:
   adapter: postgresql
   database: db_production
-  username: school-chat
-  password: <%= ENV['SCHOOL-CHAT_DATABASE_PASSWORD'] %>
+  
