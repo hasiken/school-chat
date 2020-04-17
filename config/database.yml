@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: school-chat_production
+  adapter: postgresql
+  database: db_production
   username: school-chat
   password: <%= ENV['SCHOOL-CHAT_DATABASE_PASSWORD'] %>
