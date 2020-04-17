@@ -1,3 +1,26 @@
 * {
   box-sizing: border-box;
 }
+
+.wrapper{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+
+  .left_bar{
+    width: 20%;
+    height: 100vh;
+    background-color: green
+  }
+  .main_bar{
+    width: 50%;
+    height: 100vh;
+    background-color:  fuchsia
+  }
+
+  .right_bar{
+    width: 30%;
+    height: 100vh;
+    background-color: blue
+  }
+}
