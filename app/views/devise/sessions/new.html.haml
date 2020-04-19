@@ -1,0 +1,14 @@
+.login-box
+  .login-top
+    .login-top__first
+      Login
+  .login-bottom
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"input-top",placeholder:"E-mail"
+      .field
+        = f.password_field :password, autocomplete: "current-password",class: "input-box",placeholder:"パスワード"
+      .actions
+        = f.submit "Log in", class: "submit-box"
+      .link-box
+        = link_to "Sign up", new_user_registration_path, class: "title-btn"

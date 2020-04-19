@@ -71,5 +71,6 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'devise'
 gem 'jquery-rails'
+gem 'pry-rails'
 
 
