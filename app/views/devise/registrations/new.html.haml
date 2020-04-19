@@ -1,0 +1,26 @@
+.sign-box
+  .sign-top
+    .sign-top__first
+      Sign up
+  .sign-bottom
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"input-first",placeholder:"メールアドレス"
+      .field
+        = f.text_field :name, placeholder: "例）ヤマダ", class: "input-box",placeholder:"名前"
+      .field
+        = f.text_field :number, placeholder: "例）148939", class: "input-box"
+      .fieldbox
+        = f.radio_button(:teacher, 1)
+        = f.label(:teacher, "teacher")
+        = f.radio_button(:teacher, 2)
+        = f.label(:teacher, "student")
+      .field
+        = f.password_field :password, autocomplete: "new-password",class: "input-box",placeholder:"パスワード6文字以上"
+      .field
+        = f.password_field :password_confirmation, autocomplete: "new-password",class: "input-box",placeholder:"パスワード6文字以上"
+      .actions
+        = f.submit "Sign up",class: "submit-box"
+      .render-box
+        = render "devise/shared/links",class: "render-box__form"
