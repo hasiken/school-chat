@@ -1,16 +1,16 @@
 .left_bar
   .left_bar__header
-    =link_to "gurup作成", new_group_path
+    -# =link_to "gurup作成", new_group_path
   .left_bar__main
     .left_bar__main--top
-    %h1 トップページ
-    - if user_signed_in?
-      %h2 ログインしています
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
-    - else
-      %h2 ログインしていません
-      = link_to "新規登録", new_user_registration_path
-      = link_to "ログイン", new_user_session_path
+    -# %h1 トップページ
+    -# - if user_signed_in?
+    -#   %h2 ログインしています
+    -#   = link_to "ログアウト", destroy_user_session_path, method: :delete
+    -# - else
+    -#   %h2 ログインしていません
+    -#   = link_to "新規登録", new_user_registration_path
+    -#   = link_to "ログイン", new_user_session_path
     .left_bar__main--bottom  
       .group
         .group__name
@@ -21,19 +21,8 @@
           %i
         %nav.nav
           %ul.nav_menu_ul
-            %li.nav_menu_li
-              =link_to "#" do
-                .group-name
-                  1年１組
-            %li.nav_menu_li
-              =link_to "#" do
-                .group-name
-                  1年１組
-            %li.nav_menu_li
-              =link_to "#" do
-                .group-name
-                  1年１組
-            %li.nav_menu_li
-              =link_to "#" do
-                .group-name
-                  1年１組
+            - current_user.groups.each do |group|
+              %li.nav_menu_li
+                = link_to group_messages_path(group) do
+                  .group-name
+                    = group.name
