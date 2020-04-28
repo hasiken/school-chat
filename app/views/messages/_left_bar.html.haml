@@ -3,6 +3,14 @@
     -# =link_to "gurup作成", new_group_path
   .left_bar__main
     .left_bar__main--top
+      .name-box
+        .name-box__group
+          = @group.name
+        .neme-box__nick
+          = current_user.name
+      .new-group
+        = link_to new_group_path do
+          = icon('fas', 'edit', class: 'edit-icon')
     -# %h1 トップページ
     -# - if user_signed_in?
     -#   %h2 ログインしています
