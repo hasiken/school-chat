@@ -1,3 +1,38 @@
 .wrapper
-  = render 'messages/left_bar'
+  .left_bar
+    .left_bar__header
+      -# =link_to "gurup作成", new_group_path
+    .left_bar__main
+      .left_bar__main--top
+        .name-box
+          .name-box__group
+            -# = @group.name
+          .neme-box__nick
+            -# = current_user.name
+        .new-group
+          = link_to new_group_path do
+            = icon('fas', 'edit', class: 'edit-icon')
+      %h1 トップページ
+      - if user_signed_in?
+        %h2 ログインしています
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        .left_bar__main--bottom  
+          .group
+            .group__name
+              group一覧
+            %span.nav_toggle
+              %i
+              %i
+              %i
+            %nav.nav
+              %ul.nav_menu_ul
+                - current_user.groups.each do |group|
+                  %li.nav_menu_li
+                    = link_to group_messages_path(group) do
+                      .group-name
+                        = group.name
+      - else
+        %h2 ログインしていません
+        = link_to "新規登録", new_user_registration_path
+        = link_to "ログイン", new_user_session_path
   .other-header

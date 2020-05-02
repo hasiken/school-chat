@@ -1,13 +1,17 @@
 .main_bar
   .main_bar__header
+    .main_bar__header--name
+      =@group.name
   .main_bar__main
     .main-top
     .main-center
+      = render @messages
     .main-bottom
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
+        = f.text_field :content, class: 'message-box', placeholder: 'type a message'
+        .form-mask
+          = f.label :image, class: 'form-mask__image' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        = button_tag type: 'submit', class: 'submit-btn' do
+          = icon('fas', 'paper-plane', class: 'submit-btn__icon')

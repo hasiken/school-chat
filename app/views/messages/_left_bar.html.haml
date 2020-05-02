@@ -3,14 +3,22 @@
     -# =link_to "gurup作成", new_group_path
   .left_bar__main
     .left_bar__main--top
+      .name-box
+        -# .name-box__group
+        -#   = @group.name
+        .neme-box__nick
+          = current_user.name
+      .new-group
+        = link_to new_group_path do
+          = icon('fas', 'edit', class: 'edit-icon')
     -# %h1 トップページ
-    -# - if user_signed_in?
-    -#   %h2 ログインしています
-    -#   = link_to "ログアウト", destroy_user_session_path, method: :delete
-    -# - else
-    -#   %h2 ログインしていません
-    -#   = link_to "新規登録", new_user_registration_path
-    -#   = link_to "ログイン", new_user_session_path
+    - if user_signed_in?
+      %h2 ログインしています
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      %h2 ログインしていません
+      = link_to "新規登録", new_user_registration_path
+      = link_to "ログイン", new_user_session_path
     .left_bar__main--bottom  
       .group
         .group__name

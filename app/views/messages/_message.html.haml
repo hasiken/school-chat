@@ -1,0 +1,11 @@
+.message
+  .left-message
+    -if message.user.teacher == 1
+      %p.left-message__content
+        = message.content
+      = image_tag message.image.url, class: 'left-message__image' if message.image.present?
+  .right-message
+    - if message.user.teacher == 2
+      %p.right-message__content
+        = message.content
+      = image_tag message.image.url, class: 'right-message__image' if message.image.present?
