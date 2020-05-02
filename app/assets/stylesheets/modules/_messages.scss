@@ -136,6 +136,14 @@
       height: 50px;
       background-color: green;
       width: 100%;
+      &--name{
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        font-family: 'arial black';
+        font-size: 18px;
+      }
+      
     }
     &__main{
       height: calc(100vh - 50px);
@@ -152,6 +160,16 @@
         border-bottom: 2px solid #ebebeb;
         border-right: 2px solid #ebebeb;
         height: calc(100vh - 220px);
+        overflow: scroll;
+        .message{
+          display: flex;
+          .left-message{
+            width: 50%;
+          }
+          .right-message{
+            width: 50%;
+          }
+        }
       }
       .main-bottom{
         background-color: white;

@@ -1,8 +1,11 @@
 .main_bar
   .main_bar__header
+    .main_bar__header--name
+      =@group.name
   .main_bar__main
     .main-top
     .main-center
+      = render @messages
     .main-bottom
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'message-box', placeholder: 'type a message'
