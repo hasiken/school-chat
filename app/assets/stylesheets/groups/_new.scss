@@ -13,7 +13,6 @@
     color: white;
   }
   .new_group{
-   
     height: calc(100vh - 160px);
     .chat-group-form__field{
       height: 100px;
@@ -32,7 +31,31 @@
           display: block;
         }
       }
-      &--ri
+      .chat-group-form__field--right{
+        height: 100px;
+        .chat-group-form__search{
+          height: 50px;
+          .chat-group-form__input{
+          margin: 0 auto;
+          margin-top: 20px;
+          height: 50px;
+          width: 30%;
+          padding: 15px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #a0a0a0;
+          display: block;
+          }
+        }
+      }
+      .chat-group-form__field--left{
+      color: white;
+      text-align: center;
+      }
+      .chat-group-form__field--right{
+
+      }
     }
 
   }
