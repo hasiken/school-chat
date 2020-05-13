@@ -1,11 +1,28 @@
 .message
   .left-message
     -if message.user.teacher == 1
-      %p.left-message__content
-        = message.content
+      .left-message__icon
+      .left-message__box
+        .left-message__box--top
+          .left-message__box--top--name
+            = message.user.name
+          .left-message__box--top--time
+            = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .left-message__box--bottom
+          %p.left-message__bottom--says
+            =message.content
       = image_tag message.image.url, class: 'left-message__image' if message.image.present?
-  .right-message
-    - if message.user.teacher == 2
-      %p.right-message__content
-        = message.content
-      = image_tag message.image.url, class: 'right-message__image' if message.image.present?
+  .rightbox
+    .right-message
+      - if message.user.teacher == 2
+        .right-message__box
+          .right-message__box--top
+            .right-message__box--top--name
+              = message.user.name
+            .right-message__box--top--time
+              = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+          .right-message__box--bottom
+            %p.right-message__box--bottom--says
+              =message.content
+        .right-message__icon
+        = image_tag message.image.url, class: 'right-message__image' if message.image.present?

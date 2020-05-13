@@ -162,12 +162,113 @@
         height: calc(100vh - 220px);
         overflow: scroll;
         .message{
-          display: flex;
           .left-message{
-            width: 50%;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            &__icon{
+              height: 40px;
+              width: 40px;
+              background-color: black;
+            }
+            &__box{
+              &--top{
+                display: flex;
+                &--name{
+                font-size: 15px;
+                }
+                &--time{
+                  margin-left: 10px;
+                font-size: 15px;
+
+                }
+              }
+            }
+            &__bottom{
+              width: 100%;
+              text-align: left;
+              width: 100%;
+              &--says{
+                display: inline-block;
+                position: relative; 
+                padding: 10px;
+                max-width: 250px;
+                border-radius: 12px;
+                background: #edf1ee;
+              
+                &:after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: 3px; 
+                left: -19px;
+                border: 8px solid transparent;
+                border-right: 18px solid #edf1ee;
+                -webkit-transform: rotate(35deg);
+                transform: rotate(35deg);
+              }
+              .says p {
+                margin: 0;
+                padding: 0;
+              }
+            }
+            }
+            
           }
-          .right-message{
+          .rightbox{
             width: 50%;
+            text-align: right;
+            .right-message{
+              width: 100%;
+              display: flex;
+              margin-left: 500px;
+              
+              &__box{
+                &--top{
+                  display: flex;
+                  &--name{
+
+                  }
+                  &--time{
+
+                  }
+
+                }
+                &--bottom{
+                  width: 100%;
+                  text-align: right;
+                  &--says{
+                    display: inline-block;
+                    position: relative; 
+                    margin: 0 0 0 50px;
+                    padding: 10px;
+                    max-width: 250px;
+                    border-radius: 12px;
+                    background: #30e852;
+                  
+                    &:after {
+                      content: "";
+                      position: absolute;
+                      top: 3px; 
+                      right: -19px;
+                      border: 8px solid transparent;
+                      border-left: 18px solid #30e852;
+                      -webkit-transform: rotate(-35deg);
+                      transform: rotate(-35deg);
+                  }
+                  .says p {
+                    margin: 0;
+                    padding: 0;
+                  }
+                }
+                }
+              }
+              &__icon{
+                height: 40px;
+                width: 40px;
+                background-color: black;
+              }
+            }
           }
         }
       }
