@@ -191,7 +191,6 @@
               &--says{
                 display: inline-block;
                 position: relative; 
-                margin: 0 0 0 50px;
                 padding: 10px;
                 max-width: 250px;
                 border-radius: 12px;
@@ -216,27 +215,59 @@
             }
             
           }
-          .right-message{
-            width: 100%;
-            display: flex;
-            &__box{
-              &--top{
-                &--name{
+          .rightbox{
+            width: 50%;
+            text-align: right;
+            .right-message{
+              width: 100%;
+              display: flex;
+              margin-left: 500px;
+              
+              &__box{
+                &--top{
+                  display: flex;
+                  &--name{
+
+                  }
+                  &--time{
+
+                  }
 
                 }
-                &--time{
+                &--bottom{
+                  width: 100%;
+                  text-align: right;
+                  &--says{
+                    display: inline-block;
+                    position: relative; 
+                    margin: 0 0 0 50px;
+                    padding: 10px;
+                    max-width: 250px;
+                    border-radius: 12px;
+                    background: #30e852;
                   
+                    &:after {
+                      content: "";
+                      position: absolute;
+                      top: 3px; 
+                      right: -19px;
+                      border: 8px solid transparent;
+                      border-left: 18px solid #30e852;
+                      -webkit-transform: rotate(-35deg);
+                      transform: rotate(-35deg);
+                  }
+                  .says p {
+                    margin: 0;
+                    padding: 0;
+                  }
                 }
-
+                }
               }
-              &--bottom{
-
+              &__icon{
+                height: 40px;
+                width: 40px;
+                background-color: black;
               }
-            }
-            &__icon{
-              height: 40px;
-              width: 40px;
-              background-color: black;
             }
           }
         }
